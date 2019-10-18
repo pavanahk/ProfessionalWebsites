@@ -3,7 +3,7 @@ Testing the quality of professional e-commerce websites using Selenium Webdriver
 
 # Setting up Selenium Environment
 Download and install latest version of JDK (Java developement kit) with JRE (Java runtime environment).
-Download latest version of Selenium Webdriver Java language bindings.
+Download latest version of Selenium Webdriver Java language bindings (after download Extract Zip file and copy srcs and standalone files to lib folder)
 Download latest version of Eclipse IDE.
 Download Drivers.
 

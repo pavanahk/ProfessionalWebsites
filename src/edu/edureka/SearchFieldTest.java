@@ -13,19 +13,23 @@ public class SearchFieldTest {
 
 	public void invokeBrowser() {
 		try {
+			// Set the web driver information 
 			System.setProperty("webdriver.chrome.driver", "G:\\Java_Pavana\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
+			// Delete all cookies before testing
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
+			// Set time for page load
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+			//Get Web application to be tested
 			driver.get("http://www.edureka.co");
 			searchCourse();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	//Testing Search field by entering relevant search word
 	public void searchCourse() {
 		try {
 			driver.findElement(By.id("search-inp3")).click();

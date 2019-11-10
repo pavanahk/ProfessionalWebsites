@@ -23,20 +23,19 @@ public class e2e {
 			driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
 			driver.findElement(By.xpath("//a[@value='BLR']")).click();
 			driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXT")).click();
-			driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click(); //since both the dropdowns have same value we are giving index value as [2] to identify the city in "To"
+			// since both the dropdowns have same value we are giving index value as [2] to identify the city in "To"
+			driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click(); 
 			driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight.ui-state-active")).click();
-			if(driver.findElement(By.id("Div1")).getAttribute("Style").contains("0.5")) //to make sure whether the "Return Date" is disabled when we select "One way"
-			{
+			// to make sure whether the "Return Date" is disabled when we select "One way"
+			if (driver.findElement(By.id("Div1")).getAttribute("Style").contains("0.5")) {
 				System.out.println("it is disabled");
 				Assert.assertTrue(true);
-			}
-			else
-			{
+			} else {
 				Assert.assertFalse(false);
 			}
 			driver.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount")).click();
-			driver.findElement(By.id("divpaxinfo")).click();  //Static Dropdown
-			Select s=new Select(driver.findElement(By.id("ctl00_mainContent_ddl_Adult")));
+			driver.findElement(By.id("divpaxinfo")).click(); // Static Dropdown
+			Select s = new Select(driver.findElement(By.id("ctl00_mainContent_ddl_Adult")));
 			s.selectByVisibleText("6");
 			System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 			driver.findElement(By.id("ctl00_mainContent_btn_FindFlights")).click();
